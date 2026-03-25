@@ -3,27 +3,27 @@ from functions import get_file_content as gfc
 def test_get_file_content():
 
     try:
-        gfc.get_file_content("calculator", "lorem.txt")
+        print(gfc.get_file_content("calculator", "lorem.txt"))
     except Exception as e:
         print(e)
 
     try:
-        gfc.get_file_content("calculator", "main.py")
+        print(gfc.get_file_content("calculator", "main.py"))
     except Exception as e:
         print(e)
     
     try:    
-        gfc.get_file_content("calculator", "pkg/calculator.py")
+        print(gfc.get_file_content("calculator", "pkg/calculator.py"))
     except Exception as e:
         print(e)
     
     try:            
-        gfc.get_file_content("calculator", "/bin/cat")
+        print(gfc.get_file_content("calculator", "/bin/cat"))
     except Exception as e:
         print(e)
     
     try:
-        gfc.get_file_content("calculator", "pkg/does_not_exist.py")
+        print(gfc.get_file_content("calculator", "pkg/does_not_exist.py"))
     except Exception as e:
         print(e)
 

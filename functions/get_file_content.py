@@ -9,7 +9,7 @@ def get_file_content(working_directory, file_path):
         working_directory_abs = os.path.abspath(working_directory)
         target_file = os.path.normpath(os.path.join(working_directory_abs, file_path))
         if not os.path.exists(target_file):
-            raise FileNotFoundError(f"File '{target_file}' does not exist.")
+            raise FileNotFoundError(f"Error: File '{target_file}' does not exist.")
         if not os.path.isfile(target_file):
             raise  FileNotFoundError(f'Error: File not found or is not a regular file: "{file_path}"')
         
@@ -23,7 +23,7 @@ def get_file_content(working_directory, file_path):
 
             if f.read(1):
                 content += f'[...File "{file_path}" truncated at {charlimit} characters]'
-            return content
+        return content
     except Exception as e:
         print(e)
         return str(e)
