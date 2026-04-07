@@ -18,9 +18,11 @@ def run_python_file(working_directory, file_path, args=None):
         
         absolute_file_path = os.path.abspath(file_path)
         command = ["python", absolute_file_path]
-        command.extend(args)
+        if args:
+            command.extend(args)
 
-        result = subprocess.run(command, cwd=os.path.dirname(absolute_file_path),capture_output=True, text=True, timeout=30)
+
+        result = subprocess.run(command, cwd=working_directory_abs,capture_output=True, text=True, timeout=30)
 
 
         output = ""  
